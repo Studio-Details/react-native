@@ -3,12 +3,15 @@ import {
   StyleSheet,
   Text,
   View,
-  TouchableOpacity
+  TouchableOpacity,
+  Image
 } from 'react-native';
 
 export default class MyPageScreen extends React.Component {
   static navigationOptions = {
-    title: 'マイページ'
+    title: 'マイページ',
+    headerStyle: { backgroundColor: '#ff4c21', height: 60 },
+    headerTitleStyle: { color: 'white', fontWeight: 'normal', fontSize: 18  }
   };
 
   render() {
@@ -16,43 +19,142 @@ export default class MyPageScreen extends React.Component {
     return (
       <View style={styles.container}>
         <View style={styles.upperContainer}>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>修理依頼新規登録</Text>
-            </View>
-          </TouchableOpacity>
-          <TouchableOpacity>
-            <View style={styles.button}>
-              <Text style={styles.buttonText}>決済QR読み取り</Text>
-            </View>
-          </TouchableOpacity>
+          <View style={styles.upperItem}>
+            <TouchableOpacity>
+              <View style={styles.buttonUpper}>
+                <Image
+                  style={styles.buttonImageUpper}
+                  source={require('../common/img/icon_red_wrench.png')}>
+                </Image>
+                <Text style={styles.buttonTextUpper}>修理依頼新規登録</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
+          <View style={styles.upperItem}>
+            <TouchableOpacity>
+              <View style={styles.buttonUpper}>
+                <Image
+                  style={styles.buttonImageUpper}
+                  source={require('../common/img/icon_QR.png')}>
+                </Image>
+                <Text style={styles.buttonTextUpper}>決済QR読取</Text>
+              </View>
+            </TouchableOpacity>
+          </View>
         </View>
 
         <View style={styles.lowerContainer}>
-          <View>
+          <View style={styles.lowerItems}>
+            <View style={styles.lowerItem}>
+              <TouchableOpacity>
+                <View style={styles.buttonLower}>
+                  <Image
+                    style={styles.buttonImageLower}
+                    source={require('../common/img/icon_check_mark.png')}>
+                  </Image>
+                  <Text style={styles.buttonTextLower}>登録家電一覧</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.lowerItem}>
+              <TouchableOpacity>
+                <View style={styles.buttonLower}>
+                  <Image
+                    style={styles.buttonImageLower}
+                    source={require('../common/img/icon_member_info.png')}>
+                  </Image>
+                  <Text style={styles.buttonTextLower}>会員情報</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={styles.lowerItems}>
+            <View style={styles.lowerItem}>
+              <TouchableOpacity>
+                <View style={styles.buttonLower}>
+                  <Image
+                    style={styles.buttonImageLower}
+                    source={require('../common/img/icon_yen.png')}>
+                  </Image>
+                  <Text style={styles.buttonTextLower}>決済方法変更</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.lowerItem}>
+              <TouchableOpacity>
+                <View style={styles.buttonLower}>
+                  <Image
+                    style={styles.buttonImageLower}
+                    source={require('../common/img/icon_list.png')}>
+                  </Image>
+                  <Text style={styles.buttonTextLower}>依頼一覧</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </View>
+
+        <View style={styles.footer}>
+          <View style={styles.footerItemsLeft}>
+            <View style={styles.footerItem}>
+              <TouchableOpacity>
+                <View style={styles.buttonFooter}>
+                  <Image
+                    style={styles.buttonImageFooter}
+                    source={require('../common/img/icon_yen.png')}>
+                  </Image>
+                  <Text style={styles.buttonTextFooter}>ダッシュボード</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.footerItem}>
+              <TouchableOpacity>
+                <View style={styles.buttonFooter}>
+                  <Image
+                    style={styles.buttonImageFooter}
+                    source={require('../common/img/icon_yen.png')}>
+                  </Image>
+                  <Text style={styles.buttonTextFooter}>マイページ</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+          </View>
+
+          <View style={styles.footerItemCenter}>
             <TouchableOpacity>
-              <View style={styles.button}>
-                <Text style={styles.buttonText}>登録家電一覧</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.button}>
-                <Text style={styles.buttonText}>会員情報</Text>
+              <View style={styles.menuButton}>
+                <Image
+                  style={styles.menuButtonImage}
+                  source={require('../common/img/icon_button_lines.png')}>
+                </Image>
               </View>
             </TouchableOpacity>
           </View>
 
-          <View>
-            <TouchableOpacity>
-              <View style={styles.button}>
-                <Text style={styles.buttonText}>決済方法変更</Text>
-              </View>
-            </TouchableOpacity>
-            <TouchableOpacity>
-              <View style={styles.button}>
-                <Text style={styles.buttonText}>依頼一覧</Text>
-              </View>
-            </TouchableOpacity>
+          <View style={styles.footerItemsRight}>
+            <View style={styles.footerItem}>
+              <TouchableOpacity>
+                <View style={styles.buttonFooter}>
+                  <Image
+                    style={styles.buttonImageFooter}
+                    source={require('../common/img/icon_yen.png')}>
+                  </Image>
+                  <Text style={styles.buttonTextFooter}>修理可否判定</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
+            <View style={styles.footerItem}>
+              <TouchableOpacity>
+                <View style={styles.buttonFooter}>
+                  <Image
+                    style={styles.buttonImageFooter}
+                    source={require('../common/img/icon_yen.png')}>
+                  </Image>
+                  <Text style={styles.buttonTextFooter}>お知らせ</Text>
+                </View>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
       </View>
@@ -62,18 +164,114 @@ export default class MyPageScreen extends React.Component {
 
 const styles = StyleSheet.create({
   container: {
-
+    flex: 1
   },
   upperContainer: {
-
+    flex: 6,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    backgroundColor: '#db380f'
+  },
+  upperItem: {
+    backgroundColor: '#ff3d00',
+    borderRadius: 10,
+    margin: 15,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
   },
   lowerContainer: {
-
+    flex: 15
   },
-  button: {
-
+  lowerItems: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around'
   },
-  buttonText: {
-
+  lowerItem: {
+    backgroundColor: 'white',
+    borderRadius: 10,
+    margin: 15,
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  buttonUpper: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  buttonLower: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  buttonFooter: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  buttonImageUpper: {
+    height: 50,
+    width: 50,
+    margin: 10
+  },
+  buttonImageLower: {
+    height: 40,
+    width: 40,
+    margin: 20
+  },
+  buttonImageFooter: {
+    height: 25,
+    width: 25,
+    margin: 5
+  },
+  buttonTextUpper: {
+    fontSize: 14,
+    color: 'white'
+  },
+  buttonTextLower: {
+    fontSize: 14
+  },
+  buttonTextFooter: {
+    fontSize: 10
+  },
+  footer: {
+    flex: 3,
+    flexDirection: 'row',
+    justifyContent: 'center',
+    backgroundColor: 'white',
+    marginTop: 20
+  },
+  footerItemsLeft: {
+    flex: 2,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  footerItemsRight: {
+    flex: 2,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
+  },
+  footerItemCenter: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  footerItem: {
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  menuButton: {
+    height: 56,
+    width: 56,
+    borderRadius: 28,
+    backgroundColor: '#ff3d00',
+    justifyContent: 'center',
+    alignItems: 'center'
+  },
+  menuButtonImage: {
+    height: 35,
+    width: 35,
+    margin: 5
   }
 });
