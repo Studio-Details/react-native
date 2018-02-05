@@ -46,7 +46,8 @@ export default class MyPageScreen extends React.Component {
         <View style={styles.lowerContainer}>
           <View style={styles.lowerItems}>
             <View style={styles.lowerItem}>
-              <TouchableOpacity>
+              <TouchableOpacity
+                onPress={() => navigate('HomeAppliancesList')}>
                 <View style={styles.buttonLower}>
                   <Image
                     style={styles.buttonImageLower}
