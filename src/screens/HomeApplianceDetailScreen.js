@@ -8,6 +8,8 @@ import {
   Image
 } from 'react-native';
 
+import EditImageModal from '../common/EditImageModal';
+
 export default class HomeApplianceDetailScreen extends React.Component {
   static navigationOptions = {
     title: '登録家電一覧',
@@ -16,6 +18,21 @@ export default class HomeApplianceDetailScreen extends React.Component {
     headerBackTitle: null,
     headerTintColor: 'white'
   };
+
+  constructor(props) {
+    super(props);
+    this.state = { modalVisible: false };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
+  openModal() {
+    this.setState({ modalVisible: true });
+  }
+
+  closeModal() {
+    this.setState({ modalVisible: false });
+  }
 
   render() {
     const { navigate } = this.props.navigation;
@@ -66,6 +83,9 @@ export default class HomeApplianceDetailScreen extends React.Component {
     const longBorder = <View style={styles.longBorder}></View>;
     return (
       <ScrollView style={styles.container}>
+        <EditImageModal
+          visible={this.state.modalVisible}
+          onRequestClose={this.closeModal}/>
         <View style={styles.itemContainer}>
           <TouchableOpacity
             onPress={() => navigate('HomeApplianceEdit')}>
@@ -78,7 +98,8 @@ export default class HomeApplianceDetailScreen extends React.Component {
             </View>
           </TouchableOpacity>
           <View style={styles.imageButton}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={this.openModal}>
               <Image
                 style={styles.itemImage}
                 source={require('../common/img/image_fridge.png')}>
@@ -155,7 +176,7 @@ const styles = StyleSheet.create({
     flex: 2,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: -300
+    marginLeft: 50
   },
   itemImage: {
     height: 200,
