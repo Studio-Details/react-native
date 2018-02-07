@@ -123,11 +123,52 @@ export default class HomeApplianceDetailScreen extends React.Component {
             <Text style={styles.title}>保証種別</Text>
             <Text style={styles.contentBold}>メーカー保証(延長保証なし)</Text>
             {shortBorder}
+            <View style={styles.securityImageContainer}>
+              <Image
+                style={styles.securityImage}
+                source={require('../common/img/alt_img_icon.png')}>
+              </Image>
+              <Text>保証書写真</Text>
+            </View>
+            <View style={styles.securityImageContainer}>
+              <Image
+                style={styles.securityImage}
+                source={require('../common/img/alt_img_icon.png')}>
+              </Image>
+              <Text>保証書レシート</Text>
+            </View>
+            <View style={styles.securityImageContainer}>
+              <Image
+                style={styles.securityImage}
+                source={require('../common/img/alt_img_icon.png')}>
+              </Image>
+              <Text>購入レシートを登録</Text>
+            </View>
           </View>
           {longBorder}
-          <View style={styles.settingImages}>
+          <View style={styles.settingImageContainer}>
             <Text style={styles.title}>設置画像</Text>
             <Text style={styles.contentNormal}>エアコンの場合は室外機の写真も撮影してください</Text>
+            <View style={styles.settingImages}>
+              <Image
+                style={styles.securityImage}
+                source={require('../common/img/alt_img_icon.png')}>
+              </Image>
+              <Image
+                style={styles.securityImage}
+                source={require('../common/img/alt_img_icon.png')}>
+              </Image>
+              <Image
+                style={styles.securityImage}
+                source={require('../common/img/alt_img_icon.png')}>
+              </Image>
+            </View>
+            <View style={styles.settingImages}>
+              <Image
+                style={styles.securityImage}
+                source={require('../common/img/alt_img_icon.png')}>
+              </Image>
+            </View>
           </View>
         </View>
         <TouchableOpacity>
@@ -181,8 +222,6 @@ const styles = StyleSheet.create({
   itemImage: {
     height: 200,
     width: 200,
-    margin: 10,
-    marginTop: 20
   },
   itemInfo: {
     flex: 2,
@@ -192,6 +231,7 @@ const styles = StyleSheet.create({
   },
   itemTitle : {
     fontSize: 20,
+    marginBottom: 10,
     fontWeight: 'bold'
   },
   itemDetail: {
@@ -208,13 +248,28 @@ const styles = StyleSheet.create({
     flex: 5,
     justifyContent: 'space-around',
     alignItems: 'flex-start',
-    margin: 15
+    margin: 15,
   },
-  settingImages: {
+  securityImageContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
+  },
+  securityImage: {
+    margin: 10
+  },
+  settingImageContainer: {
     flex: 3,
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     margin: 15
+  },
+  settingImages: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'space-around',
+    alignItems: 'center'
   },
   askRepairButton: {
     backgroundColor: '#ff4c21',
@@ -231,14 +286,16 @@ const styles = StyleSheet.create({
     color: 'white'
   },
   shortBorder: {
-    backgroundColor: '#d3d3d3',
+    backgroundColor: 'rgba(211,211,211,0.3)',
     height: 2,
-    width: 300
+    width: 300,
+    marginTop: 15,
+    marginBottom: 15
   },
   longBorder: {
-    backgroundColor: '#d3d3d3',
+    backgroundColor: 'rgba(211,211,211,0.4)',
     height: 2,
-    width: 350
+    width: 330
   },
   title: {
     fontSize: 15,
