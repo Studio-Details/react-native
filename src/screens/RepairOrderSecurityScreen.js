@@ -8,7 +8,7 @@ import {
   Image
 } from 'react-native';
 
-export default class NewRepairOrderScreen extends React.Component {
+export default class RepairOrderSecurityScreen extends React.Component {
   static navigationOptions = { title: '新規登録依頼' };
 
   render() {
@@ -89,7 +89,8 @@ export default class NewRepairOrderScreen extends React.Component {
             </Image>
           </View>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigate('RepairOrderSymptoms')}>
           <View style={styles.askRepairButton}>
             <Text style={styles.buttonText}>修理依頼をする   →</Text>
           </View>

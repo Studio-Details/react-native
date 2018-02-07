@@ -166,7 +166,7 @@ export default class HomeApplianceDetailScreen extends React.Component {
           </View>
         </View>
         <TouchableOpacity
-          onPress={() => navigate('NewRepairOrder')}>
+          onPress={() => navigate('RepairOrderSecurity')}>
           <View style={styles.askRepairButton}>
             <Text style={styles.buttonText}>修理依頼をする</Text>
           </View>

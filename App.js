@@ -10,7 +10,8 @@ import MyPageScreen from './src/screens/MyPageScreen';
 import HomeAppliancesListScreen from './src/screens/HomeAppliancesListScreen';
 import HomeApplianceDetailScreen from './src/screens/HomeApplianceDetailScreen';
 import HomeApplianceEditScreen from './src/screens/HomeApplianceEditScreen';
-import NewRepairOrderScreen from './src/screens/NewRepairOrderScreen';
+import RepairOrderSecurityScreen from './src/screens/RepairOrderSecurityScreen';
+import RepairOrderSymptomsScreen from './src/screens/RepairOrderSymptomsScreen';
 
   const App = StackNavigator(
   {
@@ -18,7 +19,8 @@ import NewRepairOrderScreen from './src/screens/NewRepairOrderScreen';
     HomeAppliancesList: { screen: HomeAppliancesListScreen },
     HomeApplianceDetail: { screen: HomeApplianceDetailScreen },
     HomeApplianceEdit: { screen: HomeApplianceEditScreen },
-    NewRepairOrder: { screen: NewRepairOrderScreen }
+    RepairOrderSecurity: { screen: RepairOrderSecurityScreen },
+    RepairOrderSymptoms: { screen: RepairOrderSymptomsScreen }
   },
   {
     navigationOptions: {
