@@ -105,7 +105,7 @@ export default class MyPageScreen extends React.Component {
                 <View style={styles.buttonFooter}>
                   <Image
                     style={styles.buttonImageFooter}
-                    source={require('../common/img/icon_yen.png')}>
+                    source={require('../common/img/icon_dashboard.png')}>
                   </Image>
                   <Text style={styles.buttonTextFooter}>ダッシュボード</Text>
                 </View>
@@ -116,7 +116,7 @@ export default class MyPageScreen extends React.Component {
                 <View style={styles.buttonFooter}>
                   <Image
                     style={styles.buttonImageFooter}
-                    source={require('../common/img/icon_yen.png')}>
+                    source={require('../common/img/icon_mypage.png')}>
                   </Image>
                   <Text style={styles.buttonTextFooter}>マイページ</Text>
                 </View>
@@ -125,14 +125,14 @@ export default class MyPageScreen extends React.Component {
           </View>
 
           <View style={styles.footerItemCenter}>
-            <TouchableOpacity>
-              <View style={styles.menuButton}>
+            <View style={styles.menuButton}>
+              <TouchableOpacity>
                 <Image
                   style={styles.menuButtonImage}
                   source={require('../common/img/icon_button_lines.png')}>
                 </Image>
-              </View>
-            </TouchableOpacity>
+              </TouchableOpacity>
+            </View>
           </View>
 
           <View style={styles.footerItemsRight}>
@@ -141,7 +141,7 @@ export default class MyPageScreen extends React.Component {
                 <View style={styles.buttonFooter}>
                   <Image
                     style={styles.buttonImageFooter}
-                    source={require('../common/img/icon_yen.png')}>
+                    source={require('../common/img/icon_white_wrench.png')}>
                   </Image>
                   <Text style={styles.buttonTextFooter}>修理可否判定</Text>
                 </View>
@@ -152,7 +152,7 @@ export default class MyPageScreen extends React.Component {
                 <View style={styles.buttonFooter}>
                   <Image
                     style={styles.buttonImageFooter}
-                    source={require('../common/img/icon_yen.png')}>
+                    source={require('../common/img/icon_bell.png')}>
                   </Image>
                   <Text style={styles.buttonTextFooter}>お知らせ</Text>
                 </View>
@@ -172,13 +172,15 @@ const styles = StyleSheet.create({
   upperContainer: {
     flex: 6,
     flexDirection: 'row',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     backgroundColor: '#db380f'
   },
   upperItem: {
     backgroundColor: '#ff3d00',
     borderRadius: 10,
-    margin: 15,
+    margin: 10,
+    marginTop: 20,
+    marginBottom: 20,
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center'
@@ -214,7 +216,7 @@ const styles = StyleSheet.create({
   buttonImageUpper: {
     height: 50,
     width: 50,
-    margin: 10
+    margin: 5
   },
   buttonImageLower: {
     height: 40,
@@ -222,8 +224,8 @@ const styles = StyleSheet.create({
     margin: 20
   },
   buttonImageFooter: {
-    height: 25,
-    width: 25,
+    height: 30,
+    width: 30,
     margin: 5
   },
   buttonTextUpper: {
@@ -256,9 +258,13 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
   footerItemCenter: {
-    flex: 1,
     justifyContent: 'center',
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'white',
+    height: 80,
+    width: 80,
+    borderRadius: 40,
+    marginTop: -10
   },
   footerItem: {
     justifyContent: 'center',

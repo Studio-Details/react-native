@@ -53,6 +53,7 @@ export default class HomeAppliancesListScreen extends React.Component {
         security: '長期保証無料'
       },
     ];
+    const shortBorder = <View style={styles.shortBorder}></View>;
     return (
       <View style={styles.container}>
         <FlatList
@@ -69,6 +70,7 @@ export default class HomeAppliancesListScreen extends React.Component {
                   <View style={styles.itemInfo}>
                     <Text style={styles.itemTitle}>{item.title}</Text>
                     <Text style={styles.itemDetail}>{item.shop}</Text>
+                    {shortBorder}
                     <Text style={styles.itemDetail}>購入日：{item.purchasedDate}</Text>
                     <Text style={styles.itemDetail}>メーカー保証：{item.security}</Text>
                   </View>
@@ -88,7 +90,8 @@ const styles = StyleSheet.create({
   itemContainer: {
     backgroundColor: 'white',
     borderRadius: 10,
-    margin: 15
+    margin: 20,
+    marginBottom: 0
   },
   button: {
     flex: 1,
@@ -98,7 +101,8 @@ const styles = StyleSheet.create({
   },
   itemImage: {
     flex: 1,
-    margin: 10
+    marginTop: 20,
+    marginBottom: 20
   },
   itemInfo: {
     flex: 2,
@@ -106,10 +110,20 @@ const styles = StyleSheet.create({
     alignItems: 'flex-start'
   },
   itemTitle : {
-    fontWeight: 'bold'
+    fontWeight: 'bold',
+    margin: 2
+  },
+  shortBorder: {
+    backgroundColor: 'rgba(211,211,211,0.2)',
+    height: 2,
+    width: 200,
+    marginTop: 10,
+    marginBottom: 10
   },
   itemDetail: {
-    fontSize: 10
+    color: 'grey',
+    fontSize: 12,
+    margin: 2
   },
   buttonTextUpper: {
     fontSize: 14,
