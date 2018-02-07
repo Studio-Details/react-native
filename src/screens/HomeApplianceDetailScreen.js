@@ -11,13 +11,7 @@ import {
 import EditImageModal from '../common/EditImageModal';
 
 export default class HomeApplianceDetailScreen extends React.Component {
-  static navigationOptions = {
-    title: '登録家電一覧',
-    headerStyle: { backgroundColor: '#ff3d00', height: 60 },
-    headerTitleStyle: { color: 'white', fontWeight: 'normal', fontSize: 18 },
-    headerBackTitle: null,
-    headerTintColor: 'white'
-  };
+  static navigationOptions = { title: '登録家電一覧' };
 
   constructor(props) {
     super(props);
@@ -171,7 +165,8 @@ export default class HomeApplianceDetailScreen extends React.Component {
             </View>
           </View>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => navigate('NewRepairOrder')}>
           <View style={styles.askRepairButton}>
             <Text style={styles.buttonText}>修理依頼をする</Text>
           </View>

@@ -9,13 +9,7 @@ import {
 } from 'react-native';
 
 export default class HomeAppliancesListScreen extends React.Component {
-  static navigationOptions = {
-    title: '登録家電一覧',
-    headerStyle: { backgroundColor: '#ff4c21', height: 60 },
-    headerTitleStyle: { color: 'white', fontWeight: 'normal', fontSize: 18 },
-    headerBackTitle: null,
-    headerTintColor: 'white'
-  };
+  static navigationOptions = { title: '登録家電一覧' };
 
   render() {
     const { navigate } = this.props.navigation;
