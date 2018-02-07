@@ -13,8 +13,10 @@ export default class HomeAppliancesListScreen extends React.Component {
     title: '登録家電一覧',
     headerStyle: { backgroundColor: '#ff4c21', height: 60 },
     headerTitleStyle: { color: 'white', fontWeight: 'normal', fontSize: 18 },
-    headerBackTitle: '←',
-    headerBackTitleStyle: { color: 'white', fontWeight: 'normal', fontSize: 18 },
+    headerBackTitle: null,
+    //headerBackTitleStyle: { color: 'white', fontWeight: 'normal', fontSize: 18 },
+    headerBackImage: require('../common/img/back-icon.png'),
+    headerTintColor: 'white'
   };
 
   render() {
