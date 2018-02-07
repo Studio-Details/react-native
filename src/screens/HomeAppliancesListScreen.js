@@ -14,8 +14,6 @@ export default class HomeAppliancesListScreen extends React.Component {
     headerStyle: { backgroundColor: '#ff4c21', height: 60 },
     headerTitleStyle: { color: 'white', fontWeight: 'normal', fontSize: 18 },
     headerBackTitle: null,
-    //headerBackTitleStyle: { color: 'white', fontWeight: 'normal', fontSize: 18 },
-    headerBackImage: require('../common/img/back-icon.png'),
     headerTintColor: 'white'
   };
 

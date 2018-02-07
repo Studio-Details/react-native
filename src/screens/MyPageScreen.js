@@ -11,7 +11,9 @@ export default class MyPageScreen extends React.Component {
   static navigationOptions = {
     title: 'マイページ',
     headerStyle: { backgroundColor: '#ff4c21', height: 60 },
-    headerTitleStyle: { color: 'white', fontWeight: 'normal', fontSize: 18  }
+    headerTitleStyle: { color: 'white', fontWeight: 'normal', fontSize: 18  },
+    headerBackTitle: null,
+    headerTintColor: 'white'
   };
 
   render() {

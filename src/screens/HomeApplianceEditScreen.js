@@ -8,7 +8,7 @@ import {
   Image
 } from 'react-native';
 
-export default class HomeApplianceDetailScreen extends React.Component {
+export default class HomeApplianceEditScreen extends React.Component {
   static navigationOptions = {
     title: '登録家電一覧',
     headerStyle: { backgroundColor: '#ff3d00', height: 60 },
@@ -18,42 +18,6 @@ export default class HomeApplianceDetailScreen extends React.Component {
   };
 
   render() {
-    const { navigate } = this.props.navigation;
-    const sampleHomeApps = [
-      {
-        key: 1,
-        title: '東芝/冷蔵庫',
-        image: 'image_fridge.png',
-        shop: 'コスモスベリーズリーズ　〇〇店',
-        purchasedDate: '2017/12/13',
-        security: '長期保証無料'
-      },
-      {
-        key: 2,
-        title: '東芝/冷蔵庫',
-        image: 'image_fridge.png',
-        shop: 'コスモスベリーズリーズ　〇〇店',
-        purchasedDate: '2017/12/13',
-        security: '長期保証無料'
-      },
-      {
-        key: 3,
-        title: '東芝/冷蔵庫',
-        image: 'image_fridge.png',
-        shop: 'コスモスベリーズリーズ　〇〇店',
-        purchasedDate: '2017/12/13',
-        security: '長期保証無料'
-      },
-      {
-        key: 4,
-        title: '東芝/冷蔵庫',
-        image: 'image_fridge.png',
-        shop: 'コスモスベリーズリーズ　〇〇店',
-        purchasedDate: '2017/12/13',
-        security: '長期保証無料'
-      },
-    ];
-
     var item = {
       key: 4,
       title: '東芝/冷蔵庫',
@@ -66,24 +30,26 @@ export default class HomeApplianceDetailScreen extends React.Component {
     const longBorder = <View style={styles.longBorder}></View>;
     return (
       <ScrollView style={styles.container}>
-        <View style={styles.itemContainer}>
-          <TouchableOpacity
-            onPress={() => navigate('HomeApplianceEdit')}>
-            <View style={styles.editButton}>
-              <Image
-                style={styles.editButtonImage}
-                source={require('../common/img/icon_edit.png')}>
-              </Image>
-              <Text style={styles.editButtonText}>編集</Text>
-            </View>
-          </TouchableOpacity>
-          <View style={styles.imageButton}>
-            <TouchableOpacity>
-              <Image
-                style={styles.itemImage}
-                source={require('../common/img/image_fridge.png')}>
-              </Image>
+        <View style={styles.buttonsContainer}>
+          <View style={styles.editButton}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.goBack()}>
+              <Text style={styles.editButtonText}>キャンセル</Text>
             </TouchableOpacity>
+          </View>
+          <View style={styles.editButton}>
+            <TouchableOpacity
+              onPress={() => this.props.navigation.goBack()}>
+              <Text style={styles.editButtonText}>保存</Text>
+            </TouchableOpacity>
+          </View>
+        </View>
+        <View style={styles.itemContainer}>
+          <View style={styles.imageContainer}>
+            <Image
+              style={styles.itemImage}
+              source={require('../common/img/image_fridge.png')}>
+            </Image>
           </View>
           <View style={styles.itemInfo}>
             <Text style={styles.itemTitle}>{item.title}</Text>
@@ -109,11 +75,6 @@ export default class HomeApplianceDetailScreen extends React.Component {
             <Text style={styles.contentNormal}>エアコンの場合は室外機の写真も撮影してください</Text>
           </View>
         </View>
-        <TouchableOpacity>
-          <View style={styles.askRepairButton}>
-            <Text style={styles.buttonText}>修理依頼をする</Text>
-          </View>
-        </TouchableOpacity>
       </ScrollView>
     );
   }
@@ -123,39 +84,38 @@ const styles = StyleSheet.create({
   container: {
     flex: 1
   },
+  buttonsContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    justifyContent: 'center'
+  },
   editButton: {
-    backgroundColor: '#ff3d00',
-    borderRadius: 35,
-    height: 70,
-    width: 70,
-    marginTop: -20,
-    marginRight: -325,
+    backgroundColor: '#db380f',
+    flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    alignSelf: 'flex-end'
+    padding: 20,
+    borderLeftWidth: 0.5,
+    borderRightWidth: 0.5
   },
   editButtonText: {
-    fontSize: 11,
+    fontSize: 18,
     color: 'white'
-  },
-  editButtonImage: {
-    height: 30,
-    width: 30
   },
   itemContainer: {
     backgroundColor: 'white',
     borderRadius: 10,
     margin: 20,
-    marginTop: 40,
     flex: 1,
     justifyContent: 'space-between',
     alignItems: 'flex-start'
   },
-  imageButton: {
+  imageContainer: {
     flex: 2,
     justifyContent: 'center',
     alignItems: 'center',
-    marginRight: -300
+    marginTop: 40,
+    marginLeft: 50
   },
   itemImage: {
     height: 200,
@@ -194,16 +154,6 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'flex-start',
     margin: 15
-  },
-  askRepairButton: {
-    backgroundColor: '#ff4c21',
-    borderRadius: 25,
-    height: 50,
-    width: 250,
-    margin: 30,
-    justifyContent: 'center',
-    alignItems: 'center',
-    alignSelf: 'center'
   },
   buttonText: {
     fontSize: 15,
